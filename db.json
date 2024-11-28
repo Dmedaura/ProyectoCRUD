@@ -1,0 +1,10 @@
+{
+  "tareas": [
+    {
+      "id": "e87c",
+      "nombre": "Sacar al perro",
+      "prioridad": "alta",
+      "finalizada": true
+    }
+  ]
+}

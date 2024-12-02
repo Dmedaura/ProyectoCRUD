@@ -4,7 +4,55 @@
       "id": "e87c",
       "nombre": "Sacar al perro",
       "prioridad": "alta",
+      "finalizada": false
+    },
+    {
+      "id": "e87c",
+      "nombre": "Comer",
+      "prioridad": "baja",
       "finalizada": true
+    },
+    {
+      "id": "5070",
+      "nombre": "Aprender TypeScript",
+      "prioridad": "Alta",
+      "finalizada": false
+    },
+    {
+      "id": "2731",
+      "nombre": "Aprender TypeScript",
+      "prioridad": "Alta",
+      "finalizada": false
+    },
+    {
+      "id": "9ac6",
+      "nombre": "Aprender TypeScript",
+      "prioridad": "Alta",
+      "finalizada": false
+    },
+    {
+      "id": "52b0",
+      "nombre": "Aprender TypeScript",
+      "prioridad": "Alta",
+      "finalizada": false
+    },
+    {
+      "id": "f549",
+      "nombre": "Aprender TypeScript",
+      "prioridad": "Alta",
+      "finalizada": false
+    },
+    {
+      "id": "a570",
+      "nombre": "Aprender TypeScript",
+      "prioridad": "Alta",
+      "finalizada": false
+    },
+    {
+      "id": "a983",
+      "nombre": "Aprender TypeScript",
+      "prioridad": "Alta",
+      "finalizada": false
     }
   ]
 }

@@ -9,18 +9,67 @@
     {
       "id": "9119",
       "nombre": "Hola",
-      "prioridad": "Baja"
+      "prioridad": "Baja",
+      "finalizada": true
     },
     {
       "id": "6a20",
       "nombre": "Chau",
       "prioridad": "media",
-      "finalizada": false
+      "finalizada": true
     },
     {
       "id": "770e",
       "nombre": "",
       "prioridad": "",
+      "finalizada": true
+    },
+    {
+      "id": "eddc",
+      "nombre": "Hola",
+      "prioridad": "Alta",
+      "finalizada": true
+    },
+    {
+      "id": "da8e",
+      "nombre": "Hola",
+      "prioridad": "baja",
+      "finalizada": false
+    },
+    {
+      "id": "7985",
+      "nombre": "chau",
+      "prioridad": "",
+      "finalizada": false
+    },
+    {
+      "id": "df37",
+      "nombre": "chau",
+      "prioridad": "",
+      "finalizada": false
+    },
+    {
+      "id": "7ef1",
+      "nombre": "hola",
+      "prioridad": "",
+      "finalizada": false
+    },
+    {
+      "id": "15d8",
+      "nombre": "asfasf",
+      "prioridad": "alta",
+      "finalizada": false
+    },
+    {
+      "id": "64dd",
+      "prioridad": "media",
+      "nombre": "DAniel",
+      "finalizada": false
+    },
+    {
+      "id": "d0cc",
+      "prioridad": "alta",
+      "nombre": "NuevaTarea",
       "finalizada": false
     }
   ]

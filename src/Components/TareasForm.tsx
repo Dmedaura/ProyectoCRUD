@@ -12,6 +12,7 @@ interface ITareasForm {
 }
 
 const TareasForm: FC<ITareasForm> = ({ setTareas }) => {
+  //const [nuevaTarea, setNuevaTarea] = useState({nombre: "",prioridad: ""})
   const [values, setValues] = useState<ITareas>({
     prioridad: "",
     nombre: "",
@@ -21,19 +22,31 @@ const TareasForm: FC<ITareasForm> = ({ setTareas }) => {
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
-
     const { name, value } = e.target;
-    
     setValues((prevValues) => ({
       ...prevValues,
       [name]: value,
     }));
   };
+  
+
 
   const handleSubmit = async () => {
-    const res = await POST("http://localhost:3000/tareas", values);
+    const nueva: ITareas= {
+      nombre: values.nombre,
+      prioridad: values.prioridad,
+      finalizada: false,
+    };
+    
+    setValues({ nombre: "", prioridad: "",finalizada: false }); // Limpia el formulario
+    const res = await POST("http://localhost:3000/tareas", nueva);
+    setTareas((prev) => [...prev, res]); // Agrega la nueva tarea al estado
     console.log(res);
+    
+    //setNuevaTarea ({nombre: values.nombre,prioridad: values.prioridad}); // Actualiza la lista de tareas
   };
+  //setTareas((prev) => [...prev, respuesta]); // Agrega la nueva tarea al estado
+  //setNuevaTarea({ nombre: "", prioridad: "" }); // Limpia el formulario
 
   return (
     <div>
@@ -44,6 +57,7 @@ const TareasForm: FC<ITareasForm> = ({ setTareas }) => {
           onChange={handleChange} // {(e) => setNuevaTarea({ ...nuevaTarea, nombre: e.target.value })}
           type="text"
           placeholder="Nombre de la tarea"
+          className="border p-2 rounded w-full mb-3"
         />
         <div>
         <select
@@ -61,7 +75,7 @@ const TareasForm: FC<ITareasForm> = ({ setTareas }) => {
       
       </form>
       <div>
-        <button onClick={handleSubmit}>Crear Tarea</button>
+        <button onClick={handleSubmit} className="bg-blue-500 rounded ">Crear Tarea</button>
       </div>
     </div>
   );

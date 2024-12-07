@@ -24,40 +24,32 @@ function App() {
 
   console.log(nuevaTarea);
 
-  //Crear Tareas
-  const crearTarea = async () => {
-    const nueva: ITareas = {
-      nombre: nuevaTarea.nombre,
-      prioridad: nuevaTarea.prioridad,
-      finalizada: false,
-    };
-    console.log(nueva);
-    try {
-      const respuesta = await POST<ITareas>(
-        "http://localhost:3000/tareas",
-        nueva
-      );
-      setTareas((prev) => [...prev, respuesta]); // Agrega la nueva tarea al estado
-      setNuevaTarea({ nombre: "", prioridad: "" }); // Limpia el formulario
-    } catch (error) {
-      console.error("Error creando la tarea:", error);
-    }
-  };
+  // //Crear Tareas
+  // const crearTarea = async () => {
+  //   const nueva: ITareas = {
+  //     nombre: nuevaTarea.nombre,
+  //     prioridad: nuevaTarea.prioridad,
+  //     finalizada: false,
+  //   };
+  //   console.log(nueva);
+  //   try {
+  //     const respuesta = await POST<ITareas>(
+  //       "http://localhost:3000/tareas",
+  //       nueva
+  //     );
+  //     setTareas((prev) => [...prev, respuesta]); // Agrega la nueva tarea al estado
+  //     setNuevaTarea({ nombre: "", prioridad: "" }); // Limpia el formulario
+  //   } catch (error) {
+  //     console.error("Error creando la tarea:", error);
+  //   }
+  // };
 
   //console.log(tareas)
 
   return (
     <>
-      
-        <TareasForm />
-      
 
-
-
-      
-
-      
-
+      <TareasForm setTareas={setTareas} />
       <div>
         {tareas.map((tarea) => (
           <Tareas

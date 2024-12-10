@@ -1,21 +1,15 @@
 {
   "tareas": [
     {
-      "id": "e87c",
+      "id": "2b1e",
       "nombre": "Comer",
-      "prioridad": "alta",
-      "finalizada": false
-    },
-    {
-      "id": "67b6",
       "prioridad": "Media",
-      "nombre": "Hola",
       "finalizada": false
     },
     {
-      "id": "ba8b",
-      "nombre": "Daniel",
-      "prioridad": "Baja",
+      "id": "f75a",
+      "nombre": "Hola",
+      "prioridad": "Alta",
       "finalizada": false
     }
   ]

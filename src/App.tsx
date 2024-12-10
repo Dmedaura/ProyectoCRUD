@@ -11,6 +11,7 @@ import TareasForm from "./Components/TareasForm";
 function App() {
   const [tareas, setTareas] = useState<ITareas[]>([]);
   const [nuevaTarea, setNuevaTarea] = useState({ nombre: "", prioridad: "" });
+  const [abrir, setAbrir] = useState<boolean>(false);
 
   const traerTareas = async () => {
     const res = await fetch("http://localhost:3000/tareas");
@@ -20,36 +21,15 @@ function App() {
 
   useEffect(() => {
     traerTareas();
-  }, []);
+  }, [abrir]);
 
   console.log(nuevaTarea);
 
-  // //Crear Tareas
-  // const crearTarea = async () => {
-  //   const nueva: ITareas = {
-  //     nombre: nuevaTarea.nombre,
-  //     prioridad: nuevaTarea.prioridad,
-  //     finalizada: false,
-  //   };
-  //   console.log(nueva);
-  //   try {
-  //     const respuesta = await POST<ITareas>(
-  //       "http://localhost:3000/tareas",
-  //       nueva
-  //     );
-  //     setTareas((prev) => [...prev, respuesta]); // Agrega la nueva tarea al estado
-  //     setNuevaTarea({ nombre: "", prioridad: "" }); // Limpia el formulario
-  //   } catch (error) {
-  //     console.error("Error creando la tarea:", error);
-  //   }
-  // };
-
-  //console.log(tareas)
-
   return (
     <>
-
-      <TareasForm setTareas={setTareas} />
+    <div className="p-2" >
+      <button className="rounded p-2 mb-4  bg-gray-800 text-white" onClick={() => setAbrir(!abrir)}>Agregar Tarea</button>
+      </div>
       <div>
         {tareas.map((tarea) => (
           <Tareas
@@ -62,6 +42,14 @@ function App() {
           />
         ))}
       </div>
+
+      {abrir && (
+        <div className="inset-0 fixed bg-black/10 flex items-center justify-center">
+          <div className="bg-white p-5 ">
+            <TareasForm setTareas={setTareas} setAbrir={setAbrir} metodo="POST"/>
+          </div>
+        </div>
+      )}
     </>
   );
 }
